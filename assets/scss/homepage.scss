@@ -1,0 +1,53 @@
+@import "styles"; // Header Styles
+
+header {
+  background: $black;
+
+  nav {
+    padding: 20px 0;
+
+    &::after {
+      @include clearFix;
+    }
+
+    .left-menu {
+      display: inline-block;
+      float: left;
+
+      a {
+        color: $white;
+        font-weight: 500;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          color: #ff0000;
+        }
+      }
+    }
+
+    .right-menu {
+      display: inline-block;
+      float: right;
+
+      ul {
+        li {
+          display: inline-block;
+
+          &:not(:last-child) {
+            margin-right: 15px;
+          }
+
+          a {
+            color: $white;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+              color: #ff0000;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// Header Styles
