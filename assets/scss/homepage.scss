@@ -52,9 +52,9 @@ header {
 }
 // Header Styles
 // Main
-// Top-Section Styles
 
 main {
+  // Top-Section Styles
   .top-section {
     height: 100vh;
     background: linear-gradient(45deg, rgba(245,66,66,.5) 0,rgba(30,0,255,.5) 0%), url("/img/top-section-img.jpg") center center no-repeat;
@@ -62,27 +62,22 @@ main {
     position: relative;
 
     .intro-wrapper {
-      display: inline-block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -90%);
-
-      &:after {
-        @include clearFix;
-      }
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+      align-items: center;
 
       .intro-message {
         display: inline-block;
         text-align: center;
         color: $white;
-        float: left;
-        margin-right: 60px;
+        margin-top: 300px;
 
         h1 {
-          font-size: 3rem;
+          font-size: 2.9rem;
           line-height: 50px;
           font-weight: 600;
+          margin-bottom: 50px;
         }
 
         .button {
@@ -93,14 +88,15 @@ main {
           border: 2px solid $white;
           border-radius: 3px;
           padding: 15px 35px;
-          margin-top: 50px;
-          transition: all 0.3s ease-in-out;
+          transition: all 0.4s ease-in-out;
 
           &:hover {
-            margin-top: -10px;
-            transform: scale(1.1, 1.1);
-            background: linear-gradient(45deg, rgba(245,66,66,1) 0,rgba(30,0,255,1) 100%);
+            margin-top: -30px;
+            transform: scale(1.1, 1.1) translate3d(0, -10px, 0);
+            text-shadow: 0 15px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 10px 38px 0 rgba(245,66,66,0.67);
             backface-visibility: hidden;
+            background: linear-gradient(45deg, rgba(245,66,66,1) 0,rgba(30,0,255,1) 100%);
           }
 
           &:not(:last-child) {
@@ -112,8 +108,24 @@ main {
       .price {
         display: inline-block;
         color: $white;
-        float: left;
-        margin-left: 60px;
+        text-align: center;
+        margin-top: 300px;
+
+        .only {
+          display: block;
+          font-size: 2rem;
+        }
+
+        .large-number {
+          display: block;
+          font-size: 20rem;
+          font-weight: 900;
+        }
+
+        .month {
+          display: block;
+          font-size: 2rem;
+        }
       }
     }
   }
