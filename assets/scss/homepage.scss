@@ -2,9 +2,99 @@
 
 header {
   background: $black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
 
-  #mobile-nav {
+  #mobileMenu {
     display: none;
+
+    nav {
+      padding: 20px 0;
+
+      &::after {
+        @include clearFix;
+      }
+
+      .left-menu {
+        display: inline-block;
+        float: left;
+
+        a {
+          color: $white;
+          font-weight: 500;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            color: #ff0000;
+          }
+        }
+      }
+
+      .right-menu {
+        display: block;
+        width: 50%;
+        height: 100vh;
+        float: right;
+        position: fixed;
+        top: 55px;
+        right: 0;
+        z-index: 2;
+        background: #3430ff;
+
+        ul {
+          margin-top: 20px;
+
+          li {
+            padding: 10px 20px;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+              background: #1612e6;
+              cursor: pointer;
+            }
+
+            a {
+              color: $white;
+            }
+          }
+        }
+      }
+
+      .hamburger {
+        width: 40px;
+        height: 25px;
+        position: absolute;
+        top: 10px;
+        right: 5%;
+        z-index: 3;
+        cursor: pointer;
+        vertical-align: middle;
+
+        &:hover {
+          .lines:nth-child(1) {
+            transform: translateY(-5px);
+          }
+
+          .lines:nth-child(3) {
+            transform: translateY(5px);
+          }
+        }
+
+        .lines {
+          display: block;
+          height: 5px;
+          width: inherit;
+          background: $white;
+          border-radius: 3px;
+
+          &:not(:last-child) {
+            margin-bottom: 8px;
+          }
+        }
+      }
+    }
   }
 
   #main-nav {
@@ -316,12 +406,12 @@ main {
 // Mobile
 @media only screen and (max-width: 767px) {
   header {
-    .main-nav {
+    #main-nav {
       display: none;
     }
 
-    .mobile-nav {
-      display: block;
+    #mobileMenu {
+      display: inline-block;
     }
   }
 }
