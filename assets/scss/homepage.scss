@@ -5,7 +5,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 3;
+  z-index: 5;
 
   #mobileMenu {
     display: none;
@@ -38,10 +38,11 @@ header {
         height: 100vh;
         float: right;
         position: fixed;
-        top: 55px;
+        top: 58px;
         right: 0;
-        z-index: 2;
+        z-index: 5;
         background: #3430ff;
+        margin-right: -390px;
 
         ul {
           margin-top: 20px;
@@ -63,31 +64,33 @@ header {
       }
 
       .hamburger {
-        width: 40px;
-        height: 25px;
+        display: block;
+        width: 35px;
+        height: 20px;
         position: absolute;
-        top: 10px;
-        right: 5%;
+        top: 14px;
+        right: 3%;
         z-index: 3;
         cursor: pointer;
         vertical-align: middle;
 
         &:hover {
           .lines:nth-child(1) {
-            transform: translateY(-5px);
+            transform: translateY(-2px);
           }
 
           .lines:nth-child(3) {
-            transform: translateY(5px);
+            transform: translateY(2px);
           }
         }
 
         .lines {
           display: block;
-          height: 5px;
+          height: 3px;
           width: inherit;
           background: $white;
-          border-radius: 3px;
+          border-radius: 5px;
+          transition: all 0.4s ease-in-out;
 
           &:not(:last-child) {
             margin-bottom: 8px;
@@ -156,7 +159,6 @@ main {
     background: linear-gradient(45deg, rgba(245,66,66,.5) 0,rgba(30,0,255,.5) 0%), url("/img/top-section-img.jpg") center center no-repeat;
     background-size: cover;
     position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% 60vh, 0 100%);
 
     .intro-wrapper {
       display: grid;
@@ -405,13 +407,109 @@ main {
 // Tablet
 // Mobile
 @media only screen and (max-width: 767px) {
+  // Header
   header {
-    #main-nav {
-      display: none;
-    }
+    width: 100%;
 
-    #mobileMenu {
-      display: inline-block;
+    .container {
+      #main-nav {
+        display: none;
+      }
+
+      #mobileMenu {
+        display: block;
+        width: 100%;
+
+        .left-menu {
+          a {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+  // Header
+  // Main
+  main {
+    // Top Section
+    #top-section {
+      clip-path: polygon(0 0, 100% 0, 100% 100vh, 0 100%);
+
+      .body-container {
+        max-width: 90%;
+
+        .intro-wrapper {
+          display: grid;
+          grid-template-columns: 100%;
+          grid-gap: 0;
+          position: relative;
+          z-index: 5;
+
+          .intro-message {
+            h1 {
+              font-size: 2rem;
+              margin-top: -85px;
+            }
+
+            .button-wrapper {
+              position: relative;
+              top: 90%;
+
+              .button {
+                display: block;
+                width: 30%;
+                margin: 0 auto 20px;
+                font-size: 0.9rem;
+              }
+            }
+          }
+
+          .price {
+            margin-top: -90px;
+
+            .only {
+              font-size: 1.5rem;
+            }
+
+            .large-number {
+              font-size: 10rem;
+            }
+
+            .month {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+    // Top Section
+    // Average American Job Section
+    #job-chart {
+      .bg {
+        transform-origin: 0;
+        margin-top: 0;
+        z-index: -1;
+
+        .body-container {
+          max-width: 90%;
+
+          .title-wrapper {
+            h2 {
+              font-size: 2.7rem;
+            }
+
+            .sub-title {
+              font-size: 1.3rem;
+              letter-spacing: 2px;
+            }
+          }
+
+          .job-chart-wrapper {
+            display: grid;
+            grid-template-columns: 100%;
+          }
+        }
+      }
     }
   }
 }
