@@ -5,7 +5,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 3;
+  z-index: 5;
 
   #mobileMenu {
     display: none;
@@ -42,6 +42,7 @@ header {
         right: 0;
         z-index: 2;
         background: #3430ff;
+        margin-right: -390px;
 
         ul {
           margin-top: 20px;
@@ -64,21 +65,21 @@ header {
 
       .hamburger {
         width: 40px;
-        height: 25px;
+        height: 20px;
         position: absolute;
-        top: 10px;
-        right: 5%;
+        top: 13px;
+        right: 3.5%;
         z-index: 3;
         cursor: pointer;
         vertical-align: middle;
 
         &:hover {
           .lines:nth-child(1) {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
           }
 
           .lines:nth-child(3) {
-            transform: translateY(5px);
+            transform: translateY(3px);
           }
         }
 
@@ -88,6 +89,7 @@ header {
           width: inherit;
           background: $white;
           border-radius: 3px;
+          transition: all 0.3s ease-in-out;
 
           &:not(:last-child) {
             margin-bottom: 8px;
@@ -156,7 +158,6 @@ main {
     background: linear-gradient(45deg, rgba(245,66,66,.5) 0,rgba(30,0,255,.5) 0%), url("/img/top-section-img.jpg") center center no-repeat;
     background-size: cover;
     position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% 60vh, 0 100%);
 
     .intro-wrapper {
       display: grid;
@@ -225,6 +226,34 @@ main {
           font-size: 2rem;
           margin-top: 10px;
         }
+
+        .mobile-button {
+          display: none;
+
+          .button {
+            color: $white;
+            display: inline-block;
+            font-size: 1rem;
+            text-transform: uppercase;
+            border: 2px solid $white;
+            border-radius: 3px;
+            padding: 15px 35px;
+            margin-top: 50px;
+            transition: transform 0.4s ease-in-out;
+
+            &:hover {
+              transform: scale(1.1, 1.1) translate3d(0, -10px, 0);
+              text-shadow: 0 15px 20px rgba(0,0,0,0.4);
+              box-shadow: 0 10px 38px 0 rgba(245,66,66,0.67);
+              backface-visibility: hidden;
+              background: linear-gradient(45deg, rgba(255,0,0,1) 0%,rgba(255,110,110,1) 29%,rgba(112,110,255,1) 71%,rgba(0,8,255,1) 100%);
+            }
+
+            &:not(:last-child) {
+              margin-right: 20px;
+            }
+          }
+        }
       }
     }
   }
@@ -237,7 +266,7 @@ main {
       transform: skewY(-12deg);
       transform-origin: 0;
       padding-top: 15rem;
-      margin-top: -2rem;
+      margin-top: -1rem;
 
       & > * {
         transform: skewY(12deg);
@@ -405,6 +434,7 @@ main {
 // Tablet
 // Mobile
 @media only screen and (max-width: 767px) {
+  // Header
   header {
     #main-nav {
       display: none;
@@ -414,4 +444,100 @@ main {
       display: inline-block;
     }
   }
+  // Header
+  // Top Section
+  #top-section {
+    height: 100vh;
+
+    .body-container {
+      max-width: 80%;
+
+      .intro-wrapper {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-gap: 0;
+        grid-template-rows: 50vh;
+        position: relative;
+        z-index: 3;
+
+        .intro-message {
+          h1 {
+            font-size: 2rem;
+            margin-top: -160px;
+            line-height: 40px;
+          }
+
+          .desktop-button {
+            display: none;
+          }
+        }
+
+        .price {
+          margin-top: -30px;
+
+          .only {
+            font-size: 1.2rem;
+          }
+
+          .large-number {
+            font-size: 10rem;
+          }
+
+          .month {
+            font-size: 1.2rem;
+          }
+
+          .mobile-button {
+            display: block;
+            margin-top: 40px;
+
+            .button {
+              display: block;
+              width: 80%;
+              padding: 18px 0;
+              margin: 0 auto 15px;
+
+              &:not(:last-child) {
+                margin: 0 auto 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // Top Section
+  // Average American Job Section
+  #job-chart {
+    .bg {
+      .content {
+        .body-container {
+          max-width: 80%;
+
+          .title-wrapper {
+            h2 {
+              font-size: 2.8rem;
+            }
+
+            .sub-title {
+              font-size: 1.3rem;
+            }
+          }
+
+          .job-chart-wrapper {
+            display: grid;
+            grid-template-columns: 100%;
+          }
+        }
+      }
+    }
+  }
+  // Average American Job Section
+  // What Do you Get Section
+  #what-you-get {
+    margin-top: 0;
+    position: relative;
+    z-index: 2;
+  }
+  // What Do you Get Section
 }
