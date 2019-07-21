@@ -64,54 +64,33 @@ header {
       }
 
       .hamburger {
-<<<<<<< HEAD
-        width: 40px;
-        height: 20px;
-        position: absolute;
-        top: 13px;
-        right: 3.5%;
-=======
         display: block;
         width: 35px;
-        height: 20px;
+        height: 30px;
         position: absolute;
         top: 14px;
         right: 3%;
->>>>>>> master
         z-index: 3;
         cursor: pointer;
         vertical-align: middle;
 
         &:hover {
           .lines:nth-child(1) {
-<<<<<<< HEAD
             transform: translateY(-3px);
           }
 
           .lines:nth-child(3) {
             transform: translateY(3px);
-=======
-            transform: translateY(-2px);
-          }
-
-          .lines:nth-child(3) {
-            transform: translateY(2px);
->>>>>>> master
           }
         }
 
         .lines {
           display: block;
-          height: 3px;
+          height: 4px;
           width: inherit;
           background: $white;
-<<<<<<< HEAD
           border-radius: 3px;
           transition: all 0.3s ease-in-out;
-=======
-          border-radius: 5px;
-          transition: all 0.4s ease-in-out;
->>>>>>> master
 
           &:not(:last-child) {
             margin-bottom: 8px;
@@ -482,39 +461,31 @@ main {
   main {
     // Top Section
     #top-section {
-      clip-path: polygon(0 0, 100% 0, 100% 100vh, 0 100%);
-
       .body-container {
         max-width: 90%;
 
         .intro-wrapper {
           display: grid;
-          grid-template-columns: 100%;
+          grid-template-columns: 1fr;
           grid-gap: 0;
           position: relative;
-          z-index: 5;
+          z-index: 4;
 
           .intro-message {
+            margin-top: 40px;
+
             h1 {
               font-size: 2rem;
-              margin-top: -85px;
+              margin-top: 50px;
             }
 
-            .button-wrapper {
-              position: relative;
-              top: 90%;
-
-              .button {
-                display: block;
-                width: 30%;
-                margin: 0 auto 20px;
-                font-size: 0.9rem;
-              }
+            .desktop-button {
+              display: none;
             }
           }
 
           .price {
-            margin-top: -90px;
+            margin-top: 5px;
 
             .only {
               font-size: 1.5rem;
@@ -527,6 +498,21 @@ main {
             .month {
               font-size: 1.5rem;
             }
+
+            .mobile-button {
+              display: block;
+              width: 80%;
+              margin: 45px auto 0;
+
+              .button {
+                display: block;
+                margin: 0 0 10px;
+
+                &:nth-child(2) {
+                  margin-bottom: 0;
+                }
+              }
+            }
           }
         }
       }
@@ -535,6 +521,7 @@ main {
     // Average American Job Section
     #job-chart {
       .bg {
+        height: 2000px;
         transform-origin: 0;
         margin-top: 0;
         z-index: -1;
@@ -555,106 +542,68 @@ main {
 
           .job-chart-wrapper {
             display: grid;
-            grid-template-columns: 100%;
-          }
-        }
-      }
-    }
-  }
-  // Header
-  // Top Section
-  #top-section {
-    height: 100vh;
+            grid-template-columns: 1fr;
+            grid-gap: 100px;
 
-    .body-container {
-      max-width: 80%;
+            .average-salary {
+              .text-1 {
+                word-spacing: -3px;
+              }
 
-      .intro-wrapper {
-        display: grid;
-        grid-template-columns: 100%;
-        grid-gap: 0;
-        grid-template-rows: 50vh;
-        position: relative;
-        z-index: 3;
-
-        .intro-message {
-          h1 {
-            font-size: 2rem;
-            margin-top: -160px;
-            line-height: 40px;
-          }
-
-          .desktop-button {
-            display: none;
-          }
-        }
-
-        .price {
-          margin-top: -30px;
-
-          .only {
-            font-size: 1.2rem;
-          }
-
-          .large-number {
-            font-size: 10rem;
-          }
-
-          .month {
-            font-size: 1.2rem;
-          }
-
-          .mobile-button {
-            display: block;
-            margin-top: 40px;
-
-            .button {
-              display: block;
-              width: 80%;
-              padding: 18px 0;
-              margin: 0 auto 15px;
-
-              &:not(:last-child) {
-                margin: 0 auto 15px;
+              .text-4 {
+                font-size: 5rem;
               }
             }
           }
         }
       }
     }
-  }
-  // Top Section
-  // Average American Job Section
-  #job-chart {
-    .bg {
-      .content {
-        .body-container {
-          max-width: 80%;
+    // Average American Job Section
+    // What Do you Get Section
+    #what-you-get {
+      margin-top: -550px;
+      z-index: 3;
 
-          .title-wrapper {
-            h2 {
-              font-size: 2.8rem;
-            }
+      .body-container {
+        max-width: 80%;
 
-            .sub-title {
-              font-size: 1.3rem;
-            }
+        .title-wrapper {
+          h2 {
+            font-size: 2.7rem;
           }
+        }
 
-          .job-chart-wrapper {
-            display: grid;
-            grid-template-columns: 100%;
+        .wrapper {
+          display: grid;
+          grid-template-columns: 1fr;
+
+          .list {
+            font-size: 1.5rem;
+
+            &:nth-child(7) {
+              grid-column: auto;
+            }
           }
         }
       }
     }
+    // What Do you Get Section
+    //  Ready To Start Section
+    #ready-to-start {
+      height: 130vh;
+      margin-top: -265px;
+      clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+
+      .body-container {
+        max-width: 80%;
+
+        .title-wrapper {
+          h2 {
+            font-size: 2.7rem;
+          }
+        }
+      }
+    }
+    //  Ready To Start Section
   }
-  // Average American Job Section
-  // What Do you Get Section
-  #what-you-get {
-    margin-top: 0;
-    position: relative;
-    z-index: 2;
-  }
-  // What Do you Get Section
 }
