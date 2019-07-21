@@ -7,7 +7,7 @@ header {
   width: 100%;
   z-index: 5;
 
-  #mobileMenu {
+  #mobile-menu {
     display: none;
 
     nav {
@@ -38,11 +38,16 @@ header {
         height: 100vh;
         float: right;
         position: fixed;
-        top: 58px;
+        top: 56px;
         right: 0;
         z-index: 5;
         background: #3430ff;
-        margin-right: -390px;
+        transform: translate3d(-50%, 0, 0);
+        transition: all 0.4s ease-in-out;
+
+        &.active {
+          transform: translate3d(0, 0, 0);
+        }
 
         ul {
           margin-top: 20px;
@@ -100,48 +105,48 @@ header {
     }
   }
 
-  #main-nav {
-    nav {
-      padding: 20px 0;
+  nav {
+    padding: 20px 0;
 
-      &::after {
-        @include clearFix;
-      }
+    &::after {
+      @include clearFix;
+    }
 
-      .left-menu {
-        display: inline-block;
-        float: left;
+    .logo {
+      display: inline-block;
+      float: left;
 
-        a {
-          color: $white;
-          font-weight: 500;
-          transition: all 0.2s ease-in-out;
+      a {
+        color: $white;
+        font-weight: 500;
+        transition: all 0.2s ease-in-out;
 
-          &:hover {
-            color: #ff0000;
-          }
+        &:hover {
+          color: #ff0000;
         }
       }
+    }
 
-      .right-menu {
+    #main-menu {
+      display: inline-block;
+      float: right;
+
+      ul {
         display: inline-block;
-        float: right;
 
-        ul {
-          li {
-            display: inline-block;
+        li {
+          display: inline-block;
 
-            &:not(:last-child) {
-              margin-right: 15px;
-            }
+          &:not(:last-child) {
+            margin-right: 15px;
+          }
 
-            a {
-              color: $white;
-              transition: all 0.2s ease-in-out;
+          a {
+            color: $white;
+            transition: all 0.2s ease-in-out;
 
-              &:hover {
-                color: #ff0000;
-              }
+            &:hover {
+              color: #ff0000;
             }
           }
         }
@@ -440,23 +445,21 @@ main {
     width: 100%;
 
     .container {
-      #main-nav {
-        display: none;
-      }
+      max-width: 90%;
 
-      #mobileMenu {
-        display: block;
-        width: 100%;
-
-        .left-menu {
-          a {
-            font-size: 0.9rem;
-          }
+      nav {
+        #main-menu {
+          display: none;
         }
       }
     }
   }
   // Header
+  // Mobile Menu
+  #mobile-menu {
+    display: block;
+  }
+  // Mobile Menu
   // Main
   main {
     // Top Section
