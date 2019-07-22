@@ -7,104 +7,6 @@ header {
   width: 100%;
   z-index: 5;
 
-  #mobile-menu {
-    display: none;
-
-    nav {
-      padding: 20px 0;
-
-      &::after {
-        @include clearFix;
-      }
-
-      .left-menu {
-        display: inline-block;
-        float: left;
-
-        a {
-          color: $white;
-          font-weight: 500;
-          transition: all 0.2s ease-in-out;
-
-          &:hover {
-            color: #ff0000;
-          }
-        }
-      }
-
-      .right-menu {
-        display: block;
-        width: 50%;
-        height: 100vh;
-        float: right;
-        position: fixed;
-        top: 56px;
-        right: 0;
-        z-index: 5;
-        background: #3430ff;
-        transform: translate3d(-50%, 0, 0);
-        transition: all 0.4s ease-in-out;
-
-        &.active {
-          transform: translate3d(0, 0, 0);
-        }
-
-        ul {
-          margin-top: 20px;
-
-          li {
-            padding: 10px 20px;
-            transition: all 0.3s ease-in-out;
-
-            &:hover {
-              background: #1612e6;
-              cursor: pointer;
-            }
-
-            a {
-              color: $white;
-            }
-          }
-        }
-      }
-
-      .hamburger {
-        display: block;
-        width: 35px;
-        height: 30px;
-        position: absolute;
-        top: 14px;
-        right: 3%;
-        z-index: 3;
-        cursor: pointer;
-        vertical-align: middle;
-
-        &:hover {
-          .lines:nth-child(1) {
-            transform: translateY(-3px);
-          }
-
-          .lines:nth-child(3) {
-            transform: translateY(3px);
-          }
-        }
-
-        .lines {
-          display: block;
-          height: 4px;
-          width: inherit;
-          background: $white;
-          border-radius: 3px;
-          transition: all 0.3s ease-in-out;
-
-          &:not(:last-child) {
-            margin-bottom: 8px;
-          }
-        }
-      }
-    }
-  }
-
   nav {
     padding: 20px 0;
 
@@ -127,7 +29,7 @@ header {
       }
     }
 
-    #main-menu {
+    .main-menu {
       display: inline-block;
       float: right;
 
@@ -153,8 +55,87 @@ header {
       }
     }
   }
+
+  .hamburger-icon {
+    display: block;
+    width: 35px;
+    height: 30px;
+    position: absolute;
+    top: 14px;
+    right: 3%;
+    z-index: 3;
+    cursor: pointer;
+
+    &:hover {
+      .lines:nth-child(1) {
+        transform: translateY(-3px);
+      }
+
+      .lines:nth-child(3) {
+        transform: translateY(3px);
+      }
+    }
+
+    .lines {
+      display: block;
+      height: 4px;
+      width: inherit;
+      background: $white;
+      border-radius: 3px;
+      transition: all 0.3s ease-in-out;
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+  }
 }
 // Header Styles
+// Mobile Menu
+
+.mobile-menu {
+  display: none;
+
+  &.active {
+    transform: translate3d(0, 0, 0);
+  }
+
+  nav {
+    padding: 20px 0;
+
+    ul {
+      display: block;
+      width: 50%;
+      height: 100vh;
+      float: right;
+      position: fixed;
+      top: 56px;
+      right: 0;
+      z-index: 9;
+      background: #3430ff;
+      transition: margin-right 0.4s ease-in-out;
+
+      li {
+        padding: 10px 20px;
+        transition: all 0.3s ease-in-out;
+
+        &:first-child {
+          margin-top: 20px;
+        }
+
+        &:hover {
+          background: #1612e6;
+          cursor: pointer;
+        }
+
+        a {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+// Mobile Menu
 // Main
 
 main {
@@ -448,15 +429,19 @@ main {
       max-width: 90%;
 
       nav {
-        #main-menu {
+        .main-menu {
           display: none;
         }
+      }
+
+      .hamburger-icon {
+        display: block !important;
       }
     }
   }
   // Header
   // Mobile Menu
-  #mobile-menu {
+  .mobile-menu {
     display: block;
   }
   // Mobile Menu
@@ -472,7 +457,7 @@ main {
           grid-template-columns: 1fr;
           grid-gap: 0;
           position: relative;
-          z-index: 4;
+          z-index: 1;
 
           .intro-message {
             margin-top: 40px;
@@ -594,7 +579,7 @@ main {
     //  Ready To Start Section
     #ready-to-start {
       height: 130vh;
-      margin-top: -265px;
+      margin-top: -295px;
       clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
 
       .body-container {

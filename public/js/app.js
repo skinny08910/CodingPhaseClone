@@ -1,9 +1,9 @@
-var hamburger = document.getElementsByClassName('hamburger')
+var hamburger = document.getElementsByClassName('hamburger-icon')
 
-var rightMenu = document.getElementsByClassName('right-menu')
+var mobileMenu = document.getElementsByClassName('mobile-menu')
 
 var clickedBtn = function() {
-  rightMenu[0].classList.toggle('active')
+  mobileMenu[0].classList.toggle('active')
 }
 
 hamburger[0].addEventListener('click', clickedBtn)
