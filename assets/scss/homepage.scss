@@ -350,6 +350,7 @@ main {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       justify-items: center;
+      align-items: center;
       grid-gap: 40px;
 
       .list {
@@ -410,7 +411,18 @@ main {
 // Media Queries
 // Tablet
 // Mobile
-@media only screen and (max-width: 767px) {
+// @media only screen and (max-height: 767px) {
+//   // Average American Job Section
+//   #job-chart {
+//     .bg {
+//       .content {
+//         margin-top: 90px;
+//       }
+//     }
+//   }
+//   // Average American Job Section
+// }
+@media only screen and (min-width : 320px) and (max-width : 767px) {
   // Header
   header {
     width: 100%;
@@ -504,32 +516,36 @@ main {
         margin-top: 0;
         z-index: -1;
 
-        .body-container {
-          max-width: 90%;
+        .content {
+          margin-top: 60px;
 
-          .title-wrapper {
-            h2 {
-              font-size: 2.7rem;
-            }
+          .body-container {
+            max-width: 90%;
 
-            .sub-title {
-              font-size: 1.3rem;
-              letter-spacing: 2px;
-            }
-          }
-
-          .job-chart-wrapper {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-gap: 100px;
-
-            .average-salary {
-              .text-1 {
-                word-spacing: -3px;
+            .title-wrapper {
+              h2 {
+                font-size: 2.7rem;
               }
 
-              .text-4 {
-                font-size: 5rem;
+              .sub-title {
+                font-size: 1.3rem;
+                letter-spacing: 2px;
+              }
+            }
+
+            .job-chart-wrapper {
+              display: grid;
+              grid-template-columns: 1fr;
+              grid-gap: 100px;
+
+              .average-salary {
+                .text-1 {
+                  word-spacing: -3px;
+                }
+
+                .text-4 {
+                  font-size: 5rem;
+                }
               }
             }
           }
