@@ -411,18 +411,31 @@ main {
 // Media Queries
 // Tablet
 // Mobile
-// @media only screen and (max-height: 767px) {
-//   // Average American Job Section
-//   #job-chart {
-//     .bg {
-//       .content {
-//         margin-top: 90px;
-//       }
-//     }
-//   }
-//   // Average American Job Section
-// }
-@media only screen and (min-width : 320px) and (max-width : 767px) {
+@media (orientation: landscape) {
+  // Average American Job Section
+  #job-chart {
+    .bg {
+      .body-container {
+        margin-top: 190px;
+      }
+    }
+  }
+  // Average American Job Section
+  // What Do you Get Section
+  #what-you-get {
+    .body-container {
+      margin-top: 190px;
+    }
+  }
+  // What Do you Get Section
+  // Ready To Start Section
+  // section#ready-to-start {
+  //   height: 130vh;
+  //   margin-top: 290px;
+  // }
+  // Ready To Start Section
+}
+@media only screen and (max-width : 767px) {
   // Header
   header {
     width: 100%;
