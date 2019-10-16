@@ -5,7 +5,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 1000;
 
   nav {
     padding: 20px 0;
@@ -100,7 +100,6 @@ header {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 9;
   background: #3430ff;
   transform: translate3d(100%, 0, 0);
   transition: all 0.4s ease-in-out;
@@ -132,7 +131,7 @@ main {
   // Top-Section Styles
   #top-section {
     height: 100vh;
-    background: linear-gradient(45deg, rgba(245,66,66,.5) 0,rgba(30,0,255,.5) 0%), url("/img/top-section-img.jpg") center center no-repeat;
+    background: linear-gradient(45deg, rgba(245,66,66,.5) 0,rgba(30,0,255,.5) 0%), url("/img/top-img.png") center center no-repeat;
     background-size: cover;
     position: relative;
 
@@ -147,12 +146,13 @@ main {
         display: inline-block;
         text-align: center;
         color: $white;
-        margin-top: 190px;
+        width: 100%;
+        margin-top: 350px;
 
         h1 {
           font-size: 2.9rem;
           line-height: 50px;
-          font-weight: 600;
+          font-weight: 500;
         }
 
         .button {
@@ -180,28 +180,26 @@ main {
         }
       }
 
-      .price {
+      .video {
         display: inline-block;
         color: $white;
         text-align: center;
-        margin-top: 190px;
+        margin-top: 310px;
+        width: 100%;
+        border-radius: 10px;
+        position: relative;
+        z-index: 10;
 
-        .only {
-          display: block;
-          font-size: 2rem;
-          margin-bottom: 10px;
-        }
+        .video-container {
+          width: 100%;
 
-        .large-number {
-          display: block;
-          font-size: 20rem;
-          font-weight: 900;
-        }
-
-        .month {
-          display: block;
-          font-size: 2rem;
-          margin-top: 10px;
+          iframe {
+            width: 100%;
+            border-radius: 10px;
+            -webkit-box-shadow: 0 0 53px -10px rgb(255,0,0);
+            -moz-box-shadow: 0 0 53px -10px rgb(255,0,0,);
+            box-shadow: 0 0 53px -10px rgb(255,0,0,);
+          }
         }
 
         .mobile-button {
@@ -331,7 +329,7 @@ main {
   }
   // What Do you Get Section
   #what-you-get {
-    margin-top: -700px;
+    margin-top: -600px;
     position: relative;
     z-index: 2;
 
@@ -374,7 +372,7 @@ main {
     position: relative;
     z-index: 1;
     padding-top: 30rem;
-    margin-top: -130px;
+    margin-top: -200px;
     clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
 
     .title-wrapper {
@@ -408,19 +406,12 @@ main {
     }
   }
 }
-// Media Queries
-// Tablet
+/***************************************************** Media Queries *****************************************************/
+// Laptop
+// Tablet landscape
+// Tablet portrait
 // Mobile
-@media screen and (orientation:landscape) {
-  #job-chart {
-    .bg {
-      .content {
-        margin-top: 90px;
-      }
-    }
-  }
-}
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 600px) {
   // Header
   header {
     width: 100%;
@@ -455,16 +446,18 @@ main {
         .intro-wrapper {
           display: grid;
           grid-template-columns: 1fr;
+          grid-template-rows: 300px;
           grid-gap: 0;
           position: relative;
-          z-index: 1;
+          z-index: 10;
 
           .intro-message {
-            margin-top: 40px;
+            margin-top: 10px;
 
             h1 {
               font-size: 2rem;
               margin-top: 50px;
+              width: 100%;
             }
 
             .desktop-button {
@@ -472,24 +465,12 @@ main {
             }
           }
 
-          .price {
-            margin-top: 40px;
-
-            .only {
-              font-size: 1.5rem;
-            }
-
-            .large-number {
-              font-size: 10rem;
-            }
-
-            .month {
-              font-size: 1.5rem;
-            }
+          .video {
+            margin-top: 0;
 
             .mobile-button {
               display: block;
-              width: 80%;
+              width: 70%;
               margin: 45px auto 0;
 
               .button {
@@ -597,5 +578,62 @@ main {
       }
     }
     //  Ready To Start Section
+  }
+}
+// Small Phones
+@media only screen and (max-width: 375px) {
+  // Main
+  main {
+    // Top Section
+    #top-section {
+      height: 120vh;
+
+      .body-container {
+        max-width: 90%;
+
+        .intro-wrapper {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: 300px;
+          grid-gap: 0;
+          position: relative;
+          z-index: 10;
+
+          .intro-message {
+            margin-top: 10px;
+
+            h1 {
+              font-size: 1.8rem;
+              margin-top: 50px;
+              width: 100%;
+            }
+
+            .desktop-button {
+              display: none;
+            }
+          }
+
+          .video {
+            margin-top: 0;
+
+            .mobile-button {
+              display: block;
+              width: 70%;
+              margin: 45px auto 0;
+
+              .button {
+                display: block;
+                margin: 0 0 10px;
+
+                &:nth-child(2) {
+                  margin-bottom: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    // Top Section
   }
 }
