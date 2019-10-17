@@ -647,14 +647,11 @@ main {
               justify-content: center;
               align-items: center;
               margin-top: 10px;
+              width: 90%;
 
               .button {
                 display: inline-block;
-                font-size: 0.8rem;
-
-                &:not(:first-child) {
-                  padding: 20px 35px;
-                }
+                width: 100%;
               }
             }
           }
@@ -840,12 +837,11 @@ main {
               justify-content: center;
               align-items: center;
               margin-top: 30px;
+              width: 90%;
 
               .button {
                 display: inline-block;
-                font-size: 0.7rem;
-                width: 48%;
-                padding: 10px 35px;
+                width: 100%;
                 margin-top: 0;
 
                 &:not(:first-child) {
@@ -1048,6 +1044,7 @@ main {
               .button {
                 display: block;
                 margin: 0 0 10px;
+                width: 100%;
 
                 &:nth-child(2) {
                   margin-bottom: 0;
@@ -1196,6 +1193,7 @@ main {
               .button {
                 display: block;
                 margin: 0 0 10px;
+                width: 100%;
 
                 &:nth-child(2) {
                   margin-bottom: 0;
